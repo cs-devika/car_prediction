@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 { text-align: center; color: #333; }
+        label { display: block; margin-top: 10px; color: #555; }
+        input {
+            width: 100%; padding: 8px; margin-top: 5px;
+            border: 1px solid #ccc; border-radius: 4px;
+        }
+        button {
+            margin-top: 15px; width: 100%; padding: 10px;
+            background: #007BFF; color: #fff; border: none;
+            border-radius: 4px; cursor: pointer;
+        }
+        button:hover { background: #0056b3; }
+        .result { margin-top: 20px; text-align: center; font-size: 18px; color: green; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Car Price Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="car_age">Car Age:</label>
+            <input type="number" id="car_age" name="car_age" required>
+
+            <label for="year">Year of Manufacture:</label>
+            <input type="number" id="year" name="year" required>
+
+            <label for="present_price">Present Price (in lakhs):</label>
+            <input type="number" id="present_price" name="present_price" step="0.01" required>
+
+            <label for="kms_driven">Kms Driven:</label>
+            <input type="number" id="kms_driven" name="kms_driven" required>
+
+            <button type="submit">Predict Price</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            <p>Predicted Price: ₹ {{ prediction }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
