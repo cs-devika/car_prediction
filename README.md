@@ -1,6 +1,6 @@
 # Car Prediction
 This case study is a ml based web application that predicts the price of a car based on user input.
-<img src ="https://drive.google.com/uc?export=view&id=1faak7rtmurK1PB1k46XWfcZpAzpuK_qE" width="500">
+<img src ="https://github.com/cs-devika/car_prediction/blob/main/static/image/2026-02-04.png" width="500">
 # creating an environment
 ```bash
 python -m venv .venv
